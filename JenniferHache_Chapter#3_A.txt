@@ -1,0 +1,130 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww17200\viewh11840\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Name: Jennifer Hache\
+Date: 09/15/2024\
+\
+Description: \
+This program will calculate the monthly budget by specifying the type and amount for each expense.\
+Use the reduce method to calculate and display the total expenses.Program should display highest and lowest expense.\
+\
+\
+Logic Steps:\
+\
+1. Important the reduce method from functors\
+\
+2. Create a function to start the program\
+	2a. calculate_budget() will be called to run program \
+\
+3. Create a variable to ask user to enter their monthly budget\
+	3a. budget= value will be a floating-point number\
+\
+4. Create empty expense list to hold tuples\
+	4a. Will hold expense type and expense amount (tuples)\
+\
+5. Create a while True loop to prompt the user for expense type.\
+	5a. If user enters done, the loop will break and give you results.\
+	5b. Exposes type will be stored as expense_type variable. \
+	\
+6. User will be asked to enter the amount for expense type. \
+	6a. The value is stored as a float in expense_amount.\
+\
+7. The expense type and amount are appended as a tuple to the expense list\
+	7a. the tuples are: expense_type and expense_amount \
+\
+8. Ask user if they are done entering type of expense. \
+	8a. Prompt will ask user to enter either yes or no\
+	8b. If user enters anything other than yes or no, error message will show.\
+	8c. If user enters yes, the loop will break and present results.\
+	8d. If user enters no, the loop will continue.\
+\
+9. Use a ValueError to display user did not enter a numeric value\
+	9a. Error message will appear asking user to enter valid number \
+\
+10. Calculate expenses using the reduce method (lambda)\
+	10a. Total Expenses -  The reduce function will calculate the sum of all expense amounts by \
+	adding the amount of each tuple in the expense list.\
+\
+	10b. Highest Expense -  The reduce function will use the highest expense amount\
+	then it will compare the amount each tuple.  \
+	reduce(lambda x, y: x if x[1] > y[1] else y, expense)\
+\
+	10c. Lowest Expense - The reduce function will find the lowest expense amount by using similar calculations shown in Highest Expense.\
+	reduce(lambda x, y: x if x[1] < y[1] else y, expense)\
+\
+11. Print the results\
+	11a. user's budget.\
+	11b. total expenses.\
+	11c. The remaining budget.\
+	11d. The highest and lowest expenses (their types and amounts).\
+\
+12. If expenses were not entered, user will be notified with a message.\
+\
+13. Run program by calling the calculate_budget() function\
+\
+\
+Variables Used\
+\
+1. budget : float\
+Desc: \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Stores the user's input for the total monthly budget entered.\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\
+2. expense :  tuple\
+Desc: \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 stores two tuples. expense_type and expense_amount\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\
+3. expense_type : str\
+Desc: Stores user\'92s entry for type of expense.\
+\
+4. expense_amount : float\
+desc: \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Holds the numeric value entered by user.\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\
+5. Done : str\
+Desc: Stores the user\'92s response whether they are done entering expense type\
+	has to be a yes or no answer\
+\
+6. total : float\
+desc: \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Stores the total of all expenses calculated by using the \strokec2 reduce()\strokec2  method\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \strokec2 7. highest_expense: \
+Desc: Stores the highest expense using the reduce() function.\
+\
+8. lowest_expense:\
+Desc: Stores the  lowest expense using the reduce() function.\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\
+Functions Used\
+\
+1.  calculate_budget()\
+Parameters: n/a\
+Desc: Will have user enter their monthly budget and expense types.  Function will use the reduce() method (lambda) to \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 calculate the total of all expenses, the highest expense, and the lowest expense. When the program is called at the end, the program will show the user's budget, total expenses, remaining budget, and the highest and lowest expenses.\
+Return: prints the results:\outl0\strokewidth0  budget, total expenses, remaining budget, and the highest and lowest expenses.\
+\
+2. reduce() \
+Parameters: lambda function with two arguments (x,y), list of expenses.\
+Highest expense: \outl0\strokewidth0 \strokec2 reduce(lambda x, y: x if x[1] > y[1] else y, expense)\
+Lowest expense: reduce(lambda x, y: x if x[1] < y[1] else y, expense)\
+Total expense: reduce(lambda x, y: x + y[1], expense, 0)\outl0\strokewidth0 \
+Desc: a\outl0\strokewidth0 \strokec2 pply a function cumulatively to the items of a list and reduce it to a single value.\
+Return: total of all expenses , highest/lowest expense, highest/lowest amount. (expense_type and expense_amount)\
+\
+3. Lambda \
+parameters: X,Y values. (x = value in the reduction process , y = item from expense list)\
+Desc: part of the reduce() method to operate from the expense list  - they have two parameters used as x and y\
+Return: sum of expense, tuple with the highest and lowest amount\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\
+\
+https://github.com/Jhache06/JenniferHache_Chapter-3_A.git\
+\
+Name: Jennifer Hache\
+Date: 09/17/2024\
+}
